@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="mainContainer">
+        <div class="stepZero" id="stepZero">
+            <div class="stepZero--wrapper">
+                <h1>ENVELO</h1>
+                <p>Możesz mieć swoją przesyłkę w kilkanaście sekund. </br> Rozpocznij klikając przycisk.</p>
+                <button onClick="goToStepOne()">Odbierz paczkę</button>
+            </div>
+        </div>
+        <div class="stepOne stepOneHidden" id="stepOne">
+            <div class="stepOne--wrapper">
+                <h1>ENVELO</h1>
+                <p>Możesz mieć swoją przesyłkę w kilkanaście sekund. </br> Rozpocznij klikając przycisk.</p>
+                <div class="stepOne__form--wrapper">
+                    <form>
+                        <div class="stepOne__form--input">
+                            <label>Numer telefonu</label>
+                            <input id="telNumber" type="text" minlength="9" maxlength="9"  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" required />
+                        </div>
+                        <div class="stepOne__form--input">
+                            <label>Kod odbioru</label>
+                            <input id="password" type="text" minlength="4" maxlength="4" autocomplete="off"  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" required/>
+                        </div>
+                        <div class = "stepOne__form--allert" id = "stepOne__form--allert">
+                            <p>Podaj prawidłowy numer telefonu i hasło!</p>
+                        </div>
+                    </form>
+                </div>
+                <button id= "stepOneButton" type="submit" onClick="goToStepTwo()">Odbierz paczkę</button>
+            </div>
+            
+        </div>
+        <div class="stepTwo stepTwoHidden" id="stepTwo">
+            <div class="stepTwo--wrapper"> 
+                <h2> Paczka odebrana!</h2>
+                <p> Zrobiłeś to w czasie <span id="timer"></span> sekund. </br> Czy możemy zrobić dla Ciebie coś jeszcze?</p>
+                <div class="stepTwo__inputs--wrapper">
+                    <button onClick = "goToStart()">To wszystko na dziś</button>
+                    <button onClick = "anotherPackage()">Odbierz kolejną paczkę</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script type="text/javascript" src="./script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,227 @@
+*, 
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.mainContainer {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.stepZero,
+.stepOne {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.stepZeroHidden {
+    display: none !important;
+}
+
+.stepZero--wrapper,
+.stepOne--wrapper {
+    width: clamp(300px, 50vw, 1000px);
+    height: clamp(300px, 50vw, 1000px);
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(0.8em, 2vw, 2.5em);
+    background-color: rgb(185, 185, 185);
+    
+}
+
+.stepZero--wrapper h1,
+.stepOne--wrapper h1 {
+    color: rgb(255, 0, 0);
+    margin-bottom: 0.5em;
+}
+
+.stepZero--wrapper p {
+    text-align: center;
+    margin-bottom: 3em;
+}
+
+.stepZero--wrapper button {
+    width: 50%;
+    height: 4em;
+    min-width: max-content;
+    padding: 1em;
+    font-size: clamp(1em, 1vw, 1.8em);
+    background-color: rgb(255, 0, 0);
+    border: none;
+    cursor: pointer;
+}
+
+.stepOneHidden,
+.stepTwoHidden {
+    display: none !important;
+}
+
+.stepOne {
+    position: relative;
+}
+
+.stepOneBlur {
+    filter: blur(3px);
+}
+
+.stepOne--wrapper p {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.stepOne__form--wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+}
+
+.stepOne__form--wrapper form {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.stepOne__form--input {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    margin-bottom: 2em;
+}
+
+.stepOne__form--input label {
+    width: 90%;
+    font-size: clamp(0.8em, 0.8vw, 1em);
+}
+
+.stepOne__form--input input {
+    width: 90%;
+    font-size: clamp(1em, 1vw, 1.8em);
+    text-align: center;
+}
+
+.stepOne--wrapper button {
+    position: relative;
+    width: 50%;
+    height: 4em;
+    min-width: max-content;
+    padding: 1em;
+    font-size: clamp(1em, 1vw, 1.8em);
+    background-color: rgb(139, 139, 139);
+    color: RGB(0, 0, 0);
+    border: none;
+}
+
+.stepOne__form--allert {
+    display: none;
+}
+
+.stepOne__form--allert-active {
+    display: block !important;
+    width: 90%;
+    position: absolute;
+    bottom: -0.5em;
+    color: rgb(255, 0, 0);
+
+}
+
+.stepOne--wrapper button.active {
+    background-color: rgb(255, 0, 0);
+    color: white;
+    cursor: pointer;
+}
+  
+.stepOne--wrapper button.loading {
+    color: rgb(250, 124, 124);
+}
+
+.stepOne--wrapper button.loading::after {
+    content: "";
+    position: absolute;
+    width: 3em;
+    height: 3em;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border: 8px solid transparent;
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: button-loading-spinner 1.5s ease infinite;
+}
+
+.stepTwo  {
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.stepTwo--wrapper {
+    width: clamp(230px, 35vw, 700px);
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(0.8em, 2vw, 2.5em);
+    text-align: center;
+    background-color: rgb(185, 185, 185);
+    border: 2px solid rgb(0, 0, 0);   
+}
+
+.stepTwo__inputs--wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 2em;
+}
+
+.stepTwo__inputs--wrapper button {
+    max-width: 45%;
+    min-width: min-content;
+    padding: 1em;
+    font-size: clamp(0.7em, 0.7vw, 1.4em);
+    background-color: rgb(255, 0, 0);
+    border: none;
+    cursor: pointer;
+}
+  
+  @keyframes button-loading-spinner {
+    from {
+      transform: rotate(0turn);
+    }
+  
+    to {
+      transform: rotate(1turn);
+    }
+  }
+  
